@@ -1,11 +1,10 @@
-module top_module(
-    input  [31:0] in,
-    output [31:0] out
+module top_module (
+	input [15:0] in,
+	output [7:0] out_hi,
+	output [7:0] out_lo
 );
-
-    assign out[31:24] = in[7:0];
-    assign out[23:16] = in[15:8];
-    assign out[15:8]  = in[23:16];
-    assign out[7:0]   = in[31:24];
-
+	
+	assign out_hi = in[15:8];
+	assign out_lo = in[7:0];
+	
 endmodule
